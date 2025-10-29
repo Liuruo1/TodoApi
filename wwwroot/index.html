@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <div>
+        <input type="text" id="newTodo" placeholder="What needs to be done?">
+        <button onclick="addTodo()">Add</button>
+    </div>
+    <ul id="todoList"></ul>
+
+    <script>
+        const apiUrl = '/api/TodoItems';
+
+        // Load todos when page loads
+        window.onload = () => {
+            loadTodos();
+        };
+
+        async function loadTodos() {
+            try {
+                const response = await fetch(apiUrl);
+                const todos = await response.json();
+                const list = document.getElementById('todoList');
+                list.innerHTML = '';
+                
+                todos.forEach(todo => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <input type="checkbox" ${todo.isComplete ? 'checked' : ''} 
+                            onchange="toggleTodo(${todo.id}, this.checked)">
+                        <span class="${todo.isComplete ? 'done' : ''}">${todo.name}</span>
+                        <button onclick="deleteTodo(${todo.id})">Delete</button>
+                    `;
+                    list.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error loading todos:', error);
+            }
+        }
+
+        async function addTodo() {
+            const input = document.getElementById('newTodo');
+            const name = input.value.trim();
+            if (!name) return;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, isComplete: false })
+                });
+
+                if (response.ok) {
+                    input.value = '';
+                    loadTodos();
+                }
+            } catch (error) {
+                console.error('Error adding todo:', error);
+            }
+        }
+
+        async function toggleTodo(id, isComplete) {
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id, isComplete })
+                });
+
+                if (response.ok) {
+                    loadTodos();
+                }
+            } catch (error) {
+                console.error('Error updating todo:', error);
+            }
+        }
+
+        async function deleteTodo(id) {
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    loadTodos();
+                }
+            } catch (error) {
+                console.error('Error deleting todo:', error);
+            }
+        }
+    </script>
+</body>
+</html>
