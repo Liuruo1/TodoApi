@@ -34,12 +34,13 @@
                 
                 todos.forEach(todo => {
                     const li = document.createElement('li');
-                    li.innerHTML = `
-                        <input type="checkbox" ${todo.isComplete ? 'checked' : ''} 
-                            onchange="toggleTodo(${todo.id}, this.checked)">
-                        <span class="${todo.isComplete ? 'done' : ''}">${todo.name}</span>
-                        <button onclick="deleteTodo(${todo.id})">Delete</button>
-                    `;
+                        // store the todo id on the span so toggleTodo can read the name
+                        li.innerHTML = `
+                            <input type="checkbox" ${todo.isComplete ? 'checked' : ''} 
+                                onchange="toggleTodo(${todo.id}, this.checked)">
+                            <span data-id="${todo.id}" class="${todo.isComplete ? 'done' : ''}">${todo.name}</span>
+                            <button onclick="deleteTodo(${todo.id})">Delete</button>
+                        `;
                     list.appendChild(li);
                 });
             } catch (error) {
@@ -72,12 +73,17 @@
 
         async function toggleTodo(id, isComplete) {
             try {
+                // find the span with matching data-id to get the current name
+                const span = document.querySelector(`span[data-id="${id}"]`);
+                const name = span ? span.textContent : '';
+
                 const response = await fetch(`${apiUrl}/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ id, isComplete })
+                    // send id, name and isComplete to match the DTO and avoid nulling name
+                    body: JSON.stringify({ id, name, isComplete })
                 });
 
                 if (response.ok) {

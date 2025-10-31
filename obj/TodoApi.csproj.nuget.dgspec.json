@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\a2ac4\\Documents\\CS\\TodoApi\\TodoApi.csproj": {}
+    "D:\\KAU\\CS Term 8\\CPCS-403\\Assignment2(shared)\\TodoApi\\TodoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\a2ac4\\Documents\\CS\\TodoApi\\TodoApi.csproj": {
+    "D:\\KAU\\CS Term 8\\CPCS-403\\Assignment2(shared)\\TodoApi\\TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\a2ac4\\Documents\\CS\\TodoApi\\TodoApi.csproj",
+        "projectUniqueName": "D:\\KAU\\CS Term 8\\CPCS-403\\Assignment2(shared)\\TodoApi\\TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "C:\\Users\\a2ac4\\Documents\\CS\\TodoApi\\TodoApi.csproj",
-        "packagesPath": "C:\\Users\\a2ac4\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\a2ac4\\Documents\\CS\\TodoApi\\obj\\",
+        "projectPath": "D:\\KAU\\CS Term 8\\CPCS-403\\Assignment2(shared)\\TodoApi\\TodoApi.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "D:\\KAU\\CS Term 8\\CPCS-403\\Assignment2(shared)\\TodoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\a2ac4\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
