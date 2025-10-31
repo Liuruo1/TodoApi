@@ -36,7 +36,7 @@
                     const li = document.createElement('li');
                     li.innerHTML = `
                         <input type="checkbox" ${todo.isComplete ? 'checked' : ''} 
-                            onchange="toggleTodo(${todo.id}, this.checked)">
+                            onchange="toggleTodo(event, ${todo.id})">
                         <span class="${todo.isComplete ? 'done' : ''}">${todo.name}</span>
                         <button onclick="deleteTodo(${todo.id})">Delete</button>
                     `;
@@ -70,18 +70,28 @@
             }
         }
 
-        async function toggleTodo(id, isComplete) {
+        async function toggleTodo(event, id) {
+            // Get checked state and the todo name from the DOM so we don't overwrite it
+            const checkbox = event.target;
+            const isComplete = checkbox.checked;
+            const li = checkbox.closest('li');
+            const nameSpan = li ? li.querySelector('span') : null;
+            const name = nameSpan ? nameSpan.textContent.trim() : '';
+
             try {
                 const response = await fetch(`${apiUrl}/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ id, isComplete })
+                    // send full DTO so Name is preserved
+                    body: JSON.stringify({ id: id, name: name, isComplete: isComplete })
                 });
 
                 if (response.ok) {
                     loadTodos();
+                } else {
+                    console.error('Failed to update todo', response.status);
                 }
             } catch (error) {
                 console.error('Error updating todo:', error);

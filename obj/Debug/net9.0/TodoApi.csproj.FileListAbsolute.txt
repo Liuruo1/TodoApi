@@ -282,4 +282,5 @@ C:\Users\a2ac4\Documents\CS\TodoApi\bin\Debug\net9.0\NSwag.Generation.dll
 C:\Users\a2ac4\Documents\CS\TodoApi\bin\Debug\net9.0\NSwag.Generation.AspNetCore.dll
 C:\Users\a2ac4\Documents\CS\TodoApi\bin\Debug\net9.0\YamlDotNet.dll
 C:\Users\a2ac4\Documents\CS\TodoApi\bin\Debug\net9.0\TodoApi.staticwebassets.runtime.json
-C:\Users\a2ac4\Documents\CS\TodoApi\obj\Debug\net9.0\compressed\v7fzscjp8g-lkkow7b4y6.gz
+C:\Users\a2ac4\Documents\CS\TodoApi\obj\Debug\net9.0\TodoApi.sourcelink.json
+C:\Users\a2ac4\Documents\CS\TodoApi\obj\Debug\net9.0\compressed\v7fzscjp8g-bfls5ppc9r.gz
