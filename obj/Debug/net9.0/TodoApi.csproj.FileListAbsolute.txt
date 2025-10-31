@@ -558,7 +558,6 @@ D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\rjimswa.d
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\scopedcss\bundle\TodoApi.styles.css
-D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\compressed\v7fzscjp8g-lkkow7b4y6.gz
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\staticwebassets.build.json
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\staticwebassets.development.json
@@ -569,3 +568,4 @@ D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\refint\To
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\TodoApi.pdb
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\TodoApi.genruntimeconfig.cache
 D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\ref\TodoApi.dll
+D:\KAU\CS Term 8\CPCS-403\Assignment2(shared)\TodoApi\obj\Debug\net9.0\compressed\v7fzscjp8g-75kr678bn6.gz
